@@ -17,7 +17,7 @@ class Program
 
         for (int i = 0; i < ana_koleksiyon.Count(); i++)
         {
-            if (int.TryParse(Console.ReadLine(), out n) || n > 0)
+            if (int.TryParse(Console.ReadLine(), out n) && n > 0)
             {
 
                 ana_koleksiyon[i] = n;
@@ -77,6 +77,13 @@ class Program
 
         System.Console.WriteLine("Asal Sayıların Toplamı: " + asal_sayac);
         System.Console.WriteLine("Asal Olmayan Sayıların Toplamı: " + non_asal_sayac);
+
+        if (asal_sayac < 1 || non_asal_sayac <1)
+        {
+            System.Console.WriteLine("Asal ya da asal olmayan sayı yok ortalama verilemez");
+            return;
+        }
+
         System.Console.WriteLine("Asal Sayıların Ortalaması: " + (asal_koleksiyon.Sum() / asal_koleksiyon.Count()));
         System.Console.WriteLine("Asal Olmayan Sayıların Ortalaması: " + (nonasal_koleksiyon.Sum() / nonasal_koleksiyon.Count()));
 
